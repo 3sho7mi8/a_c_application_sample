@@ -12,8 +12,8 @@ class Scrapingon
   end
 
   def title
-    eval <<-end_eval
+    eval <<~RUBY
       @doc.#{Condition.find(@id).get_title}
-    end_eval
+    RUBY
   end
 end
