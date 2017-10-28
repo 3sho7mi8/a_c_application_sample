@@ -11,9 +11,9 @@ class Scrapingon
     @id = id
   end
 
-  class_eval <<-EOS
-    def title
-      #{Condition.first.get_title}
-    end
-  EOS
+  def title
+    eval <<-end_eval
+      @doc.#{Condition.find(@id).get_title}
+    end_eval
+  end
 end
