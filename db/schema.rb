@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113063919) do
+ActiveRecord::Schema.define(version: 20171113070743) do
 
   create_table "conditions", force: :cascade do |t|
     t.string "get_title"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20171113063919) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gallery_id"
+    t.index ["gallery_id"], name: "index_exhibitions_on_gallery_id"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 20171113063919) do
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url"
   end
 
   create_table "get_exhibitions", force: :cascade do |t|
@@ -41,6 +44,8 @@ ActiveRecord::Schema.define(version: 20171113063919) do
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gallery_id"
+    t.index ["gallery_id"], name: "index_get_exhibitions_on_gallery_id"
   end
 
 end

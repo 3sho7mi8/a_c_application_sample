@@ -2,7 +2,7 @@ class Scrapingon
   require "nokogiri"
   require "open-uri"
 
-  attr_accessor :url
+  attr_accessor :url, :doc
 
   def initialize(url, id)
     @url = url
@@ -13,7 +13,25 @@ class Scrapingon
 
   def title
     eval <<~RUBY
-      @doc.#{Condition.find(@id).get_title}
+      #{GetExhibition.find(@id).title}
+    RUBY
+  end
+
+  def description
+    eval <<~RUBY
+      #{GetExhibition.find(@id).description}
+    RUBY
+  end
+
+  def image
+    eval <<~RUBY
+      #{GetExhibition.find(@id).image}
+    RUBY
+  end
+
+  def note
+    eval <<~RUBY
+      #{GetExhibition.find(@id).note}
     RUBY
   end
 end
