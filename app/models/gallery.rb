@@ -1,4 +1,4 @@
 class Gallery < ApplicationRecord
   has_many :exhibitions
-  has_many :get_exhibitions
+  belongs_to :get_exhibition
 end
