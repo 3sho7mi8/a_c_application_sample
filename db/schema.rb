@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113113500) do
+ActiveRecord::Schema.define(version: 20171113114636) do
 
   create_table "conditions", force: :cascade do |t|
     t.string "get_title"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20171113113500) do
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "url"
+    t.string "uri"
     t.integer "get_exhibition_id"
     t.index ["get_exhibition_id"], name: "index_galleries_on_get_exhibition_id"
   end
